@@ -4,175 +4,270 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auric Hardcastle</title>
-    <meta name="description" content="AI safety researcher, computational linguistics, operations research. Singapore American School '26.">
-    <meta name="keywords" content="Auric Hardcastle, AI safety, sycophancy, LLM, industrial engineering, operations research, Chengdu hip-hop, linguistics">
+    <meta name="description" content="Auric Hardcastle. AI safety research, computational linguistics, operations research. Singapore.">
+    <meta name="keywords" content="Auric Hardcastle, AI safety, sycophancy, LLM, industrial engineering, operations research, Chengdu, linguistics">
     <meta property="og:title" content="Auric Hardcastle">
-    <meta property="og:description" content="AI safety researcher, computational linguistics, operations research.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aurichardcastle.github.io">
+    <meta property="og:description" content="AI safety research, computational linguistics, operations research.">
     <link rel="canonical" href="https://aurichardcastle.github.io">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             color: #1a1a1a;
             background: #fafafa;
-            line-height: 1.7;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
         .container {
             max-width: 640px;
             margin: 0 auto;
-            padding: 60px 24px 80px;
+            padding: 56px 24px 72px;
+        }
+        header {
+            margin-bottom: 56px;
         }
         h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
-        .tagline {
-            color: #666;
-            font-size: 16px;
-            margin-bottom: 40px;
-        }
-        .links {
-            margin-bottom: 40px;
-            font-size: 15px;
-        }
-        .links a {
-            color: #1a1a1a;
-            text-decoration: none;
-            border-bottom: 1px solid #ccc;
-            margin-right: 20px;
-        }
-        .links a:hover { border-bottom-color: #1a1a1a; }
-        h2 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-top: 48px;
-            margin-bottom: 20px;
-            letter-spacing: -0.3px;
-        }
-        .project {
-            margin-bottom: 28px;
-        }
-        .project h3 {
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 22px;
+            font-weight: 600;
             margin-bottom: 4px;
         }
-        .project h3 a {
-            color: #1a1a1a;
-            text-decoration: none;
-            border-bottom: 1px solid #ccc;
-        }
-        .project h3 a:hover { border-bottom-color: #1a1a1a; }
-        .project p {
-            font-size: 15px;
-            color: #444;
-        }
-        .project .meta {
-            font-size: 13px;
-            color: #888;
-            margin-top: 4px;
-        }
-        .project .meta a {
-            color: #888;
-            text-decoration: none;
-            border-bottom: 1px solid #ddd;
-        }
-        .writing {
+        header .sub {
+            font-size: 14px;
+            color: #6b7280;
             margin-bottom: 20px;
         }
-        .writing a {
-            font-size: 16px;
+        header nav {
+            display: flex;
+            gap: 16px;
+        }
+        header nav a {
+            font-size: 13px;
+            font-weight: 500;
+            color: #fff;
+            background: #1a1a1a;
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            transition: background 0.15s;
+        }
+        header nav a:hover { background: #374151; }
+
+        .section {
+            margin-bottom: 48px;
+        }
+        .section-title {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #9ca3af;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .research-card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 12px;
+        }
+        .research-card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .research-card h3 a {
             color: #1a1a1a;
             text-decoration: none;
-            border-bottom: 1px solid #ccc;
         }
-        .writing a:hover { border-bottom-color: #1a1a1a; }
-        .writing .date {
+        .research-card h3 a:hover { color: #2563eb; }
+        .research-card .desc {
+            font-size: 13.5px;
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .research-card .numbers {
+            display: flex;
+            gap: 20px;
             font-size: 13px;
-            color: #888;
-            margin-left: 8px;
+            color: #6b7280;
         }
-        .writing p {
-            font-size: 15px;
-            color: #444;
-            margin-top: 4px;
+        .research-card .numbers strong {
+            color: #1a1a1a;
         }
-        .footer {
-            margin-top: 60px;
+
+        .writing-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 14px 0;
+            border-bottom: 1px solid #f3f4f6;
+            text-decoration: none;
+        }
+        .writing-link:first-of-type {
+            border-top: 1px solid #f3f4f6;
+        }
+        .writing-link .left h3 {
+            font-size: 14px;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 2px;
+        }
+        .writing-link .left p {
+            font-size: 13px;
+            color: #6b7280;
+        }
+        .writing-link .date {
+            font-size: 12px;
+            color: #9ca3af;
+            white-space: nowrap;
+            margin-left: 24px;
+        }
+        .writing-link:hover .left h3 { color: #2563eb; }
+
+        .bg-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .bg-item {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 16px 18px;
+        }
+        .bg-item h4 {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        .bg-item p {
+            font-size: 12.5px;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        footer {
+            margin-top: 48px;
             padding-top: 20px;
-            border-top: 1px solid #e0e0e0;
-            font-size: 13px;
-            color: #999;
+            border-top: 1px solid #e5e7eb;
+            font-size: 12px;
+            color: #9ca3af;
+            display: flex;
+            justify-content: space-between;
+        }
+        footer a { color: #6b7280; text-decoration: none; }
+        footer a:hover { color: #1a1a1a; }
+
+        @media (max-width: 600px) {
+            .bg-grid { grid-template-columns: 1fr; }
+            .container { padding: 40px 20px 60px; }
+            .writing-link { flex-direction: column; }
+            .writing-link .date { margin-left: 0; margin-top: 4px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Auric Hardcastle</h1>
-        <p class="tagline">AI safety research. Computational linguistics. Operations research.<br>Singapore American School '26. Based in Singapore.</p>
 
-        <div class="links">
-            <a href="https://github.com/AuricHardcastle">GitHub</a>
-            <a href="https://linkedin.com/in/auric-hardcastle">LinkedIn</a>
-            <a href="https://medium.com/@aurichardcastle">Medium</a>
+        <header>
+            <h1>Auric Hardcastle</h1>
+            <p class="sub">AI safety research, computational linguistics, operations research. Singapore.</p>
+            <nav>
+                <a href="https://github.com/AuricHardcastle">GitHub</a>
+                <a href="https://linkedin.com/in/auric-hardcastle">LinkedIn</a>
+                <a href="https://medium.com/@aurichardcastle">Medium</a>
+                <a href="mailto:aurichardcastle@gmail.com">Email</a>
+            </nav>
+        </header>
+
+        <div class="section">
+            <div class="section-title">Research</div>
+
+            <div class="research-card">
+                <h3><a href="https://github.com/AuricHardcastle/presupposed-vs-asserted-falsehoods">Presupposed vs Asserted Falsehoods</a></h3>
+                <p class="desc">Does syntactic framing change whether LLMs accept false premises? Presupposition framing roughly doubles false-premise acceptance in GPT-4o, Claude Sonnet 4.5, and Gemini 2.0 Flash. Within-subjects experimental design with blinded scoring and independent cross-validation.</p>
+                <div class="numbers">
+                    <span><strong>24.7%</strong> vs 12.2%</span>
+                    <span><strong>p &lt; .001</strong></span>
+                    <span><strong>1,793</strong> responses</span>
+                </div>
+            </div>
+
+            <div class="research-card">
+                <h3><a href="https://github.com/AuricHardcastle/sichuan-dialect-perception-and-textual-absence">Sichuan Dialect: Perception and Textual Absence</a></h3>
+                <p class="desc">Listeners insist Sichuan dialect is central to Chengdu hip-hop. A 40-song corpus shows it's near-absent from written lyrics. Chinese characters encode meaning, not pronunciation, so the dialect exists in performance but disappears on the page. Mixed-methods design with fieldwork in Chengdu.</p>
+                <div class="numbers">
+                    <span><strong>40</strong> songs</span>
+                    <span><strong>2,400+</strong> lines coded</span>
+                    <span><strong>9</strong> artists</span>
+                </div>
+            </div>
+
+            <div class="research-card">
+                <h3><a href="https://github.com/AuricHardcastle/jane-street-neural-net-solver">Jane Street Neural Network Reassembly</a></h3>
+                <p class="desc">Reassembled a shuffled 48-block residual network from a 10<sup>122</sup> search space. Training leaves a dynamic isometry fingerprint in weight products that collapses the pairing problem. Hill-climbed 66 adjacent swaps to floating-point-zero error.</p>
+                <div class="numbers">
+                    <span><strong>10<sup>122</sup></strong> search space</span>
+                    <span>MSE = <strong>7.8 &times; 10<sup>-15</sup></strong></span>
+                </div>
+            </div>
         </div>
 
-        <h2>Research</h2>
+        <div class="section">
+            <div class="section-title">Writing</div>
 
-        <div class="project">
-            <h3><a href="https://github.com/AuricHardcastle/presupposed-vs-asserted-falsehoods">Presupposed vs Asserted Falsehoods</a></h3>
-            <p>Presupposition framing roughly doubles false-premise acceptance in frontier LLMs (24.7% vs 12.2%, p &lt; .001). Tested GPT-4o, Claude Sonnet 4.5, and Gemini 2.0 Flash across 1,793 responses using a blinded LLM judge with cross-validation.</p>
-            <p class="meta">2026 &middot; <a href="https://github.com/AuricHardcastle/presupposed-vs-asserted-falsehoods">Code &amp; data</a></p>
+            <a class="writing-link" href="https://medium.com/@aurichardcastle/the-dialect-everyone-hears-but-nobody-writes-aa437f88f757">
+                <div class="left">
+                    <h3>The Dialect Everyone Hears but Nobody Writes</h3>
+                    <p>I coded 40 Chengdu rap songs looking for Sichuan dialect. Found almost none on the page.</p>
+                </div>
+                <span class="date">Jun 2026</span>
+            </a>
+
+            <a class="writing-link" href="https://medium.com/@aurichardcastle/88-vs-63-what-one-number-taught-me-about-real-work-943a07823407">
+                <div class="left">
+                    <h3>What One Number Taught Me About Real Work</h3>
+                    <p>What a flight simulator utilization analysis at Boeing taught me about professional communication.</p>
+                </div>
+                <span class="date">Dec 2025</span>
+            </a>
         </div>
 
-        <div class="project">
-            <h3><a href="https://github.com/AuricHardcastle/sichuan-dialect-perception-and-textual-absence">Sichuan Dialect: Perception and Textual Absence</a></h3>
-            <p>40-song corpus study showing Chengdu hip-hop's perceived Sichuan dialect is near-absent from written lyrics. Chinese orthography can't encode pronunciation; the dialect lives in performance, not text. Mixed-methods design with AI-assisted coding and native speaker verification.</p>
-            <p class="meta">2025&ndash;2026 &middot; <a href="https://github.com/AuricHardcastle/sichuan-dialect-perception-and-textual-absence">Corpus &amp; instruments</a></p>
+        <div class="section">
+            <div class="section-title">Background</div>
+
+            <div class="bg-grid">
+                <div class="bg-item">
+                    <h4>Boeing Global Services</h4>
+                    <p>Flight simulator utilization analysis. QUEST research partnership, Singapore, 2025.</p>
+                </div>
+                <div class="bg-item">
+                    <h4>Darmine Capital</h4>
+                    <p>Co-founded student APAC macro and quantitative research group, 2025-26.</p>
+                </div>
+                <div class="bg-item">
+                    <h4>Chinese Proficiency</h4>
+                    <p>HSK 4 from Chengdu immersion. 800+ characters from Guilin. AP Chinese.</p>
+                </div>
+                <div class="bg-item">
+                    <h4>Singapore American School</h4>
+                    <p>Class of 2026.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="project">
-            <h3><a href="https://github.com/AuricHardcastle/jane-street-neural-net-solver">Jane Street Neural Network Reassembly</a></h3>
-            <p>Reassembled a shuffled 48-block residual network from a 10<sup>122</sup> search space to floating-point-zero error (MSE = 7.8 &times; 10<sup>-15</sup>). Used a training-fingerprint method based on dynamic isometry signatures, then hill-climbed 66 adjacent swaps to exact reconstruction.</p>
-            <p class="meta">2026 &middot; <a href="https://github.com/AuricHardcastle/jane-street-neural-net-solver">Solver code</a></p>
-        </div>
+        <footer>
+            <span>Auric Hardcastle</span>
+            <a href="mailto:aurichardcastle@gmail.com">aurichardcastle@gmail.com</a>
+        </footer>
 
-        <h2>Writing</h2>
-
-        <div class="writing">
-            <a href="https://medium.com/@aurichardcastle/the-dialect-everyone-hears-but-nobody-writes-aa437f88f757">The Dialect Everyone Hears but Nobody Writes</a><span class="date">Jun 2026</span>
-            <p>How I coded 40 Chengdu rap songs looking for Sichuan dialect and found almost none on the page.</p>
-        </div>
-
-        <div class="writing">
-            <a href="https://medium.com/@aurichardcastle/88-vs-63-what-one-number-taught-me-about-real-work-943a07823407">What One Number Taught Me About Real Work</a><span class="date">Dec 2025</span>
-            <p>What a flight simulator utilization analysis at Boeing taught me about professional communication.</p>
-        </div>
-
-        <h2>Background</h2>
-
-        <div class="project">
-            <h3>Boeing Global Services</h3>
-            <p>QUEST research partnership at Boeing Singapore (2025). Analyzed full flight simulator utilization data across the training facility. Identified scheduling patterns and revenue implications.</p>
-        </div>
-
-        <div class="project">
-            <h3>Darmine Capital</h3>
-            <p>Co-founded a student APAC macro and quantitative research group (~8 members, 2025-26).</p>
-        </div>
-
-        <div class="project">
-            <h3>Chinese Proficiency</h3>
-            <p>HSK 4 from Chengdu immersion (2025). 800+ characters from Guilin immersion (2024). AP Chinese Language and Culture.</p>
-        </div>
-
-        <div class="footer">
-            Auric Hardcastle &middot; Singapore &middot; aurichardcastle@gmail.com
-        </div>
     </div>
 </body>
 </html>
