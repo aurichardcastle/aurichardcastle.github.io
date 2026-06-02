@@ -5,269 +5,297 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auric Hardcastle</title>
     <meta name="description" content="Auric Hardcastle. AI safety research, computational linguistics, operations research. Singapore.">
-    <meta name="keywords" content="Auric Hardcastle, AI safety, sycophancy, LLM, industrial engineering, operations research, Chengdu, linguistics">
-    <meta property="og:title" content="Auric Hardcastle">
-    <meta property="og:description" content="AI safety research, computational linguistics, operations research.">
     <link rel="canonical" href="https://aurichardcastle.github.io">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', -apple-system, sans-serif;
-            color: #1a1a1a;
-            background: #fafafa;
-            line-height: 1.6;
+            color: #222;
+            background: #fff;
             -webkit-font-smoothing: antialiased;
+            font-size: 14px;
+            line-height: 1.55;
         }
-        .container {
-            max-width: 640px;
-            margin: 0 auto;
-            padding: 56px 24px 72px;
-        }
-        header {
+        .page { max-width: 720px; margin: 0 auto; padding: 56px 28px 80px; }
+
+        /* Header */
+        .intro {
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
             margin-bottom: 56px;
         }
-        h1 {
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 4px;
+        .intro img {
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
         }
-        header .sub {
-            font-size: 14px;
-            color: #6b7280;
-            margin-bottom: 20px;
+        .intro h1 { font-size: 22px; font-weight: 600; margin-bottom: 4px; }
+        .intro .sub { font-size: 13px; color: #666; margin-bottom: 14px; }
+        .intro .links { display: flex; gap: 20px; font-size: 13px; }
+        .intro .links a {
+            color: #555; text-decoration: none;
+            border-bottom: 1px solid #ddd; padding-bottom: 1px;
         }
-        header nav {
-            display: flex;
-            gap: 16px;
-        }
-        header nav a {
-            font-size: 13px;
-            font-weight: 500;
-            color: #fff;
-            background: #1a1a1a;
-            text-decoration: none;
-            padding: 6px 14px;
-            border-radius: 6px;
-            transition: background 0.15s;
-        }
-        header nav a:hover { background: #374151; }
+        .intro .links a:hover { border-color: #222; color: #222; }
 
-        .section {
-            margin-bottom: 48px;
-        }
-        .section-title {
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: #9ca3af;
-            margin-bottom: 20px;
+        /* Sections */
+        .section { margin-bottom: 52px; }
+        .section-label {
+            font-size: 13px; font-weight: 600; color: #222;
+            margin-bottom: 24px;
             padding-bottom: 8px;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid #e0e0e0;
         }
 
-        .research-card {
-            background: #fff;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            padding: 20px 24px;
-            margin-bottom: 12px;
+        /* Research */
+        .research {
+            margin-bottom: 36px;
+            padding-left: 16px;
+            border-left: 2px solid #ddd;
         }
-        .research-card h3 {
-            font-size: 15px;
-            font-weight: 600;
+        .research:hover { border-left-color: #2563eb; }
+        .research .top {
+            display: flex; justify-content: space-between; align-items: baseline;
             margin-bottom: 8px;
         }
-        .research-card h3 a {
-            color: #1a1a1a;
-            text-decoration: none;
+        .research h3 { font-size: 15px; font-weight: 600; }
+        .research h3 a { color: #222; text-decoration: none; }
+        .research h3 a:hover { text-decoration: underline; }
+        .research .when { font-size: 12px; color: #999; }
+        .research .motivation {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 14px; font-style: italic; color: #666;
+            margin-bottom: 10px; line-height: 1.5;
         }
-        .research-card h3 a:hover { color: #2563eb; }
-        .research-card .desc {
-            font-size: 13.5px;
-            color: #4b5563;
-            line-height: 1.6;
-            margin-bottom: 10px;
+        .research .points {
+            font-size: 13px; color: #444; line-height: 1.6;
         }
-        .research-card .numbers {
-            display: flex;
-            gap: 20px;
-            font-size: 13px;
-            color: #6b7280;
+        .research .points li {
+            margin-bottom: 4px;
+            margin-left: 16px;
         }
-        .research-card .numbers strong {
-            color: #1a1a1a;
+        .research .implication {
+            font-size: 13px; color: #222; font-weight: 500;
+            margin-top: 8px;
+        }
+        .research .stats {
+            margin-top: 10px;
+            display: flex; flex-wrap: wrap; gap: 6px;
+        }
+        .research .stat {
+            font-size: 11px; background: #f3f4f6; color: #555;
+            padding: 3px 10px; border-radius: 3px;
+        }
+        .research .stat strong { color: #222; }
+
+        /* Feature image */
+        .feature-img {
+            margin: 20px 0 8px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .feature-img img {
+            width: 100%; display: block;
+        }
+        .feature-img .caption {
+            font-size: 11px; color: #999; padding: 6px 12px;
+            background: #fafafa;
         }
 
-        .writing-link {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding: 14px 0;
-            border-bottom: 1px solid #f3f4f6;
-            text-decoration: none;
+        /* Writing */
+        .article {
+            margin-bottom: 20px;
+            padding-left: 16px;
+            border-left: 2px solid #ddd;
         }
-        .writing-link:first-of-type {
-            border-top: 1px solid #f3f4f6;
+        .article:hover { border-left-color: #2563eb; }
+        .article a {
+            font-size: 14px; font-weight: 500; color: #222; text-decoration: none;
         }
-        .writing-link .left h3 {
-            font-size: 14px;
-            font-weight: 500;
-            color: #1a1a1a;
-            margin-bottom: 2px;
+        .article a:hover { text-decoration: underline; }
+        .article .preview {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 13px; color: #666; margin-top: 3px; line-height: 1.5;
         }
-        .writing-link .left p {
-            font-size: 13px;
-            color: #6b7280;
-        }
-        .writing-link .date {
-            font-size: 12px;
-            color: #9ca3af;
-            white-space: nowrap;
-            margin-left: 24px;
-        }
-        .writing-link:hover .left h3 { color: #2563eb; }
+        .article .when { font-size: 12px; color: #999; margin-top: 3px; }
 
-        .bg-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
+        /* Experience */
+        .exp {
+            padding: 18px 20px;
+            border: 1px solid #eee;
+            background: #fafafa;
+            margin-bottom: 12px;
         }
-        .bg-item {
-            background: #fff;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            padding: 16px 18px;
+        .exp-row {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+            margin-bottom: 12px;
         }
-        .bg-item h4 {
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 3px;
-        }
-        .bg-item p {
-            font-size: 12.5px;
-            color: #6b7280;
-            line-height: 1.5;
-        }
+        .exp h4 { font-size: 13px; font-weight: 600; margin-bottom: 1px; }
+        .exp .role { font-size: 12px; color: #888; margin-bottom: 6px; }
+        .exp p { font-size: 12px; color: #555; line-height: 1.55; }
 
-        footer {
-            margin-top: 48px;
-            padding-top: 20px;
-            border-top: 1px solid #e5e7eb;
-            font-size: 12px;
-            color: #9ca3af;
-            display: flex;
-            justify-content: space-between;
+        /* Footer */
+        .footer {
+            margin-top: 48px; padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 12px; color: #999;
         }
-        footer a { color: #6b7280; text-decoration: none; }
-        footer a:hover { color: #1a1a1a; }
+        .footer .status {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-style: italic; color: #888;
+            margin-bottom: 12px; font-size: 13px;
+        }
+        .footer .bottom {
+            display: flex; justify-content: space-between;
+        }
+        .footer a { color: #888; text-decoration: none; }
 
         @media (max-width: 600px) {
-            .bg-grid { grid-template-columns: 1fr; }
-            .container { padding: 40px 20px 60px; }
-            .writing-link { flex-direction: column; }
-            .writing-link .date { margin-left: 0; margin-top: 4px; }
+            .intro { flex-direction: column; gap: 16px; }
+            .intro img { width: 64px; height: 64px; }
+            .exp-row { grid-template-columns: 1fr; }
+            .page { padding: 36px 20px 56px; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+<div class="page">
 
-        <header>
+    <div class="intro">
+        <img src="photo.jpg" alt="Auric Hardcastle">
+        <div>
             <h1>Auric Hardcastle</h1>
-            <p class="sub">AI safety research, computational linguistics, operations research. Singapore.</p>
-            <nav>
+            <p class="sub">Singapore. Singapore American School '26.</p>
+            <div class="links">
                 <a href="https://github.com/AuricHardcastle">GitHub</a>
                 <a href="https://linkedin.com/in/auric-hardcastle">LinkedIn</a>
                 <a href="https://medium.com/@aurichardcastle">Medium</a>
                 <a href="mailto:aurichardcastle@gmail.com">Email</a>
-            </nav>
-        </header>
+            </div>
+        </div>
+    </div>
 
-        <div class="section">
-            <div class="section-title">Research</div>
+    <div class="section">
+        <div class="section-label">Research</div>
 
-            <div class="research-card">
+        <div class="research">
+            <div class="top">
                 <h3><a href="https://github.com/AuricHardcastle/presupposed-vs-asserted-falsehoods">Presupposed vs Asserted Falsehoods</a></h3>
-                <p class="desc">Does syntactic framing change whether LLMs accept false premises? Presupposition framing roughly doubles false-premise acceptance in GPT-4o, Claude Sonnet 4.5, and Gemini 2.0 Flash. Within-subjects experimental design with blinded scoring and independent cross-validation.</p>
-                <div class="numbers">
-                    <span><strong>24.7%</strong> vs 12.2%</span>
-                    <span><strong>p &lt; .001</strong></span>
-                    <span><strong>1,793</strong> responses</span>
-                </div>
+                <span class="when">2026</span>
             </div>
+            <p class="motivation">I noticed AI kept agreeing with me. I wanted to know if the way you phrase a false claim changes whether a model catches it.</p>
+            <ul class="points">
+                <li>Within-subjects experiment across GPT-4o, Claude Sonnet 4.5, and Gemini 2.0 Flash</li>
+                <li>Full pipeline built in Python: stimulus generation, multi-threaded API collection via OpenRouter, blinded LLM-as-judge scoring with independent cross-validation</li>
+                <li>Study 1 hit a ceiling effect on well-known myths. Diagnosed the problem, redesigned stimuli, Study 2 found the effect</li>
+            </ul>
+            <p class="implication">Current AI safety benchmarks systematically undercount sycophantic failures by missing the most natural way people phrase false claims.</p>
+            <div class="stats">
+                <span class="stat"><strong>24.7%</strong> vs 12.2%</span>
+                <span class="stat"><strong>p &lt; .001</strong></span>
+                <span class="stat"><strong>1,793</strong> responses</span>
+            </div>
+        </div>
 
-            <div class="research-card">
+        <div class="research">
+            <div class="top">
                 <h3><a href="https://github.com/AuricHardcastle/sichuan-dialect-perception-and-textual-absence">Sichuan Dialect: Perception and Textual Absence</a></h3>
-                <p class="desc">Listeners insist Sichuan dialect is central to Chengdu hip-hop. A 40-song corpus shows it's near-absent from written lyrics. Chinese characters encode meaning, not pronunciation, so the dialect exists in performance but disappears on the page. Mixed-methods design with fieldwork in Chengdu.</p>
-                <div class="numbers">
-                    <span><strong>40</strong> songs</span>
-                    <span><strong>2,400+</strong> lines coded</span>
-                    <span><strong>9</strong> artists</span>
-                </div>
+                <span class="when">2025 - 2026</span>
             </div>
+            <p class="motivation">I heard Sichuan dialect everywhere in Chengdu's hip-hop clubs. Then I opened the lyrics and it wasn't there.</p>
+            <ul class="points">
+                <li>40-song corpus across 9 artists, 2,400+ lines coded for dialect features with native speaker verification</li>
+                <li>4 of 5 Chengdu artists had zero confirmed dialect in their written lyrics. Comparison group also zero</li>
+                <li>One artist (KKECHO) deliberately forced dialect vocabulary into text, validating the method</li>
+            </ul>
+            <p class="implication">Chinese characters encode meaning, not pronunciation. Any corpus-based study of dialect in Chinese music will systematically miss what listeners actually hear.</p>
+            <div class="stats">
+                <span class="stat"><strong>40</strong> songs</span>
+                <span class="stat"><strong>2,400+</strong> lines</span>
+                <span class="stat"><strong>9</strong> artists</span>
+                <span class="stat">Fieldwork in Chengdu</span>
+            </div>
+        </div>
 
-            <div class="research-card">
+        <div class="research">
+            <div class="top">
                 <h3><a href="https://github.com/AuricHardcastle/jane-street-neural-net-solver">Jane Street Neural Network Reassembly</a></h3>
-                <p class="desc">Reassembled a shuffled 48-block residual network from a 10<sup>122</sup> search space. Training leaves a dynamic isometry fingerprint in weight products that collapses the pairing problem. Hill-climbed 66 adjacent swaps to floating-point-zero error.</p>
-                <div class="numbers">
-                    <span><strong>10<sup>122</sup></strong> search space</span>
-                    <span>MSE = <strong>7.8 &times; 10<sup>-15</sup></strong></span>
-                </div>
+                <span class="when">2026</span>
+            </div>
+            <p class="motivation">Jane Street broke a trained neural network into 97 pieces and posted it on Hugging Face. We decided to put it back together.</p>
+            <ul class="points">
+                <li>Search space: (48!)^2, roughly 10<sup>122</sup> possible configurations</li>
+                <li>Discovered that training leaves a dynamic isometry fingerprint in weight products, collapsing the pairing problem</li>
+                <li>Hill-climbed 66 adjacent swaps to converge from MSE = 0.076 to floating-point-zero error across 6 rounds</li>
+            </ul>
+            <div class="stats">
+                <span class="stat"><strong>10<sup>122</sup></strong> search space</span>
+                <span class="stat">MSE = <strong>7.8 &times; 10<sup>-15</sup></strong></span>
+                <span class="stat"><strong>66</strong> swaps</span>
             </div>
         </div>
+    </div>
 
-        <div class="section">
-            <div class="section-title">Writing</div>
+    <p style="font-size: 12px; color: #888; margin-bottom: 52px;">Detailed write-ups and visuals for each project on <a href="https://linkedin.com/in/auric-hardcastle" style="color: #555;">LinkedIn</a>.</p>
 
-            <a class="writing-link" href="https://medium.com/@aurichardcastle/the-dialect-everyone-hears-but-nobody-writes-aa437f88f757">
-                <div class="left">
-                    <h3>The Dialect Everyone Hears but Nobody Writes</h3>
-                    <p>I coded 40 Chengdu rap songs looking for Sichuan dialect. Found almost none on the page.</p>
-                </div>
-                <span class="date">Jun 2026</span>
-            </a>
+    <div class="section">
+        <div class="section-label">Writing</div>
 
-            <a class="writing-link" href="https://medium.com/@aurichardcastle/88-vs-63-what-one-number-taught-me-about-real-work-943a07823407">
-                <div class="left">
-                    <h3>What One Number Taught Me About Real Work</h3>
-                    <p>What a flight simulator utilization analysis at Boeing taught me about professional communication.</p>
-                </div>
-                <span class="date">Dec 2025</span>
-            </a>
+        <div class="article">
+            <a href="https://medium.com/@aurichardcastle/the-dialect-everyone-hears-but-nobody-writes-aa437f88f757">The Dialect Everyone Hears but Nobody Writes</a>
+            <p class="preview">I coded 40 Chengdu rap songs looking for Sichuan dialect. Found almost none on the page.</p>
+            <p class="when">June 2026 &middot; Medium</p>
         </div>
 
-        <div class="section">
-            <div class="section-title">Background</div>
+        <div class="article">
+            <a href="https://medium.com/@aurichardcastle/88-vs-63-what-one-number-taught-me-about-real-work-943a07823407">What One Number Taught Me About Real Work</a>
+            <p class="preview">What a flight simulator utilization analysis at Boeing taught me about professional communication.</p>
+            <p class="when">December 2025 &middot; Medium</p>
+        </div>
+    </div>
 
-            <div class="bg-grid">
-                <div class="bg-item">
-                    <h4>Boeing Global Services</h4>
-                    <p>Flight simulator utilization analysis. QUEST research partnership, Singapore, 2025.</p>
-                </div>
-                <div class="bg-item">
-                    <h4>Darmine Capital</h4>
-                    <p>Co-founded student APAC macro and quantitative research group, 2025-26.</p>
-                </div>
-                <div class="bg-item">
-                    <h4>Chinese Proficiency</h4>
-                    <p>HSK 4 from Chengdu immersion. 800+ characters from Guilin. AP Chinese.</p>
-                </div>
-                <div class="bg-item">
-                    <h4>Singapore American School</h4>
-                    <p>Class of 2026.</p>
-                </div>
+    <div class="section">
+        <div class="section-label">Experience</div>
+
+        <div class="exp">
+            <h4>Boeing Global Services</h4>
+            <div class="role">QUEST Research Partnership &middot; Singapore &middot; 2025</div>
+            <p>Analyzed flight simulator utilization data across three platforms. Identified scheduling patterns and revenue gaps. Presented findings to senior training management.</p>
+        </div>
+
+        <div class="exp">
+            <h4>Darmine Capital</h4>
+            <div class="role">Co-Founder &middot; Singapore &middot; 2025-26</div>
+            <p>~8-person student group producing macro and quantitative research on APAC markets. Policy divergence, FX carry, equity factor models, volatility regimes.</p>
+        </div>
+
+        <div class="exp-row">
+            <div class="exp">
+                <h4>EcoCupid Consultancy</h4>
+                <div class="role">QUEST Project &middot; 2025</div>
+                <p>Designed the Eco-Scouts discovery program for an ASEAN eco-startup.</p>
+            </div>
+            <div class="exp">
+                <h4>China Immersions</h4>
+                <div class="role">Guilin 2024 &middot; Chengdu 2025</div>
+                <p>200 hours of Mandarin. HSK 4. 800+ characters. Fieldwork for the linguistics study.</p>
             </div>
         </div>
+    </div>
 
-        <footer>
+    <div class="footer">
+        <p class="status">Enlisting Singapore National Service, October 2026.</p>
+        <div class="bottom">
             <span>Auric Hardcastle</span>
             <a href="mailto:aurichardcastle@gmail.com">aurichardcastle@gmail.com</a>
-        </footer>
-
+        </div>
     </div>
+
+</div>
 </body>
 </html>
